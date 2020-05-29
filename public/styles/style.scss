@@ -1,8 +1,8 @@
 $font-sans: 'Ubuntu', sans-serif;
 $grey: hsla(0, 0, 75%, 0.5);
 $primaryColor1: #fff;
-$primaryColor2: #3339DD;
-//$primaryColor2: #5c61fa;
+//$primaryColor2: #3339DD;
+$primaryColor2: #5c61fa;
 $secondaryColor1: #6d1772;
 $secondaryColor2: #3339DD;
 
@@ -33,7 +33,7 @@ a {
 nav {
   background-color: $primaryColor2;
   color: $primaryColor1;
-  font-size: 3em;
+  font-size: 2em;
   display: flex;
   padding: 0 1em;
   a,
@@ -100,7 +100,9 @@ textarea {
     padding: 0;
     width: 50vw;
     height: 100vh;
-    background: url("./../images/group-2-background.svg") left/100% no-repeat;
+    //background: url("./../images/group-2-background.svg") left/100% no-repeat;
+    background: url("./../images/back-index.png") left/150% no-repeat;
+
     p {
       font-size: 3em;
       color: $primaryColor1;
