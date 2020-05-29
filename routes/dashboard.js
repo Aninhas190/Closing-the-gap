@@ -5,7 +5,7 @@ const dashboard = new Router();
 const routeGuard = require('./../middleware/route-guard');
 
 dashboard.get('/dashboard', routeGuard, (req, res, next) => {
-  res.render('dashboard', { title: "I'm in Dashboard" });
+  res.render('dashboard');
 });
 
 module.exports = dashboard;

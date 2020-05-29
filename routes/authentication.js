@@ -42,7 +42,7 @@ router.post('/sign-up', uploader.single('image'), (req, res, next) => {
     })
     .then((user) => {
       req.session.user = user._id;
-      res.redirect('/dashboard');
+      res.render('dashboard');
     })
     .catch((error) => {
       next(error);
@@ -68,7 +68,7 @@ router.post('/sign-in', (req, res, next) => {
     .then((result) => {
       if (result) {
         req.session.user = user._id;
-        res.redirect('/dashboard');
+        res.render('dashboard');
       } else {
         return Promise.reject(new Error('Wrong password.'));
       }
