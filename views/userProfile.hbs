@@ -1,8 +1,28 @@
-<h1>User Profile</h1>
-<img src="{{user.image}}" alt="{{user.name}} image">
-<a href="/profile/edit">Edit image</a>
-<p>{{user.name}}</p>
-<p>{{user.phone}}</p>
-<p>{{user.email}}</p>
+<section class="profile">
+  <h1>User Profile</h1>
+  <img src="{{user.image}}" alt="{{user.name}} image">
+  <br />
+  <a href="/profile/edit">Edit image</a>
+  <p><strong>Username:</strong> {{user.name}}</p>
+  <p><strong>Email:</strong> {{user.email}}</p>
+  <p><strong>Mobile:</strong> {{user.phoneNumber}}</p>
+</section>
 
 
+<section class="suggestions"> 
+  <h3>Our Suggestions to improve your life</h3>
+  <div class="logos">
+    <div>
+      <a href="https://www.bemyeyes.com/" target="_blank"><img src="./images/be-my-eyes.png" alt="Be my eyes logo"  /><a/>
+      <h6>Be my Eyes</h6>
+    </div>
+    <div>
+      <a href="https://chrome.google.com/webstore/detail/chromevox-classic-extensi/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en" target="_blank"><img src="./images/logo-reader.svg" alt="Reader logo app" href=""></a>
+      <h6>NVDA Screen Reader</h6>
+    </div>
+    <div>
+      <a href="https://chrome.google.com/webstore/detail/handsfree-for-web-voice-c/ldfboinpfdahkgnljbkohgimhimmafip?hl=en" target="_blank"><img src="./images/logo-random-company.svg" alt="voice control logo app" href=""></a>
+      <h6>Handsfree Web</h6>
+    </div>
+  </div>
+</section>

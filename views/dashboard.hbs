@@ -1,10 +1,12 @@
+
+<section  class="profile">
+
 <h1>Welcome, {{user.name}}!</h1>
 
 <a href="/dashboard/{{ user._id }}/post/create">Create Post</a>
 
 
 {{#each posts}}
-<section>
 <h4>{{creator.name}} - {{title}}</h4>
 <a href="/profile">Contact me here</a>
 <h5>Message</h5>
