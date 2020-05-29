@@ -15,6 +15,13 @@ const schema = new mongoose.Schema({
   },
   passwordHash: {
     type: String
+  }, 
+  image: {
+    type: String, 
+    default: ''
+  },
+  phoneNumber: {
+    type: String,
   }
 });
 
