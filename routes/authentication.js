@@ -30,7 +30,7 @@ router.get('/sign-up', (req, res, next) => {
 });
 
 router.post('/sign-up', uploader.single('image'), (req, res, next) => {
-  const { name, email, password, image, phoneNumber } = req.body;
+  const { name, email, password, phoneNumber } = req.body;
   bcryptjs
     .hash(password, 10)
     .then(hash => {
@@ -38,7 +38,6 @@ router.post('/sign-up', uploader.single('image'), (req, res, next) => {
         name,
         email,
         passwordHash: hash,
-        image,
         phoneNumber
       });
     })
