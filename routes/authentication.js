@@ -7,25 +7,7 @@ const User = require('./../models/user');
 
 const router = new Router();
 
-//picture
-const multer = require('multer');
-const cloudinary = require('cloudinary');
-const { CloudinaryStorage } = require('multer-storage-cloudinary');
-
-cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET
-});
-
-const storage = new CloudinaryStorage({
-  cloudinary,
-  folder: 'user-image-hackathon'
-});
-
-const uploader = multer({ storage });
-
-router.get('/sign-up', (req, res, next) => {
+router.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
@@ -50,7 +32,7 @@ router.post('/sign-up', (req, res, next) => {
     });
 });
 
-router.get('/sign-in', (req, res, next) => {
+router.get('/sign-in', (req, res) => {
   res.render('sign-in');
 });
 
@@ -79,7 +61,7 @@ router.post('/sign-in', (req, res, next) => {
     });
 });
 
-router.post('/sign-out', (req, res, next) => {
+router.post('/sign-out', (req, res) => {
   req.session.destroy();
   res.redirect('/');
 });

@@ -9,7 +9,11 @@
   </head>
   <body>
     <nav>
+      {{#if user}}
+      <a href="/dashboard">Home</a>
+      {{else}}
       <a href="/">Home</a>
+      {{/if}}
       {{#if user}}
         <!-- <a href="/">{{user.name}}'s Profile</a> -->
         <form action="/authentication/sign-out" method="POST">
