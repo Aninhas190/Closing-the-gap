@@ -18,7 +18,7 @@ const schema = new mongoose.Schema({
   }, 
   image: {
     type: String, 
-    default: './../public/images/defaultUserImage.svg'
+    default: 'images/defaultUserImage.svg'
   },
   phoneNumber: {
     type: String
