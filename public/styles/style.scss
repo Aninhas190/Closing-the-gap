@@ -1,7 +1,8 @@
-$font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-sans: 'Ubuntu', sans-serif;
 $grey: hsla(0, 0, 75%, 0.5);
 $primaryColor1: #fff;
 $primaryColor2: #3339DD;
+//$primaryColor2: #5c61fa;
 $secondaryColor1: #6d1772;
 $secondaryColor2: #3339DD;
 
@@ -17,7 +18,7 @@ $secondaryColor2: #3339DD;
 
 body {
   // max-width: 52em;
-  padding: 0 1em;
+  //padding: 0 1em;
   margin: 0;
   font-family: sans-serif;
   font-family: $font-sans;
@@ -30,7 +31,11 @@ a {
 }
 
 nav {
+  background-color: $primaryColor2;
+  color: $primaryColor1;
+  font-size: 3em;
   display: flex;
+  padding: 0 1em;
   a,
   button {
     padding: 1em 0;
@@ -86,20 +91,44 @@ textarea {
 .index-main-container {
   // display: flex;
   // background: url("./../images/back-index.png") center/100% no-repeat;
-  background: url("./../images/back-index-mobile.png") center/100% no-repeat;
   max-width: 100%;
-  //height: 100vh;
-  h1{
-    width: 100vw;
-  }
+  margin: 0;
+  padding: 0;
+  display: flex;
+  
   .left-container {
-    width: 100vw
+    padding: 0;
+    width: 50vw;
+    height: 100vh;
+    background: url("./../images/group-2-background.svg") left/100% no-repeat;
+    p {
+      font-size: 3em;
+      color: $primaryColor1;
+      padding: 2.8em 1em 0 5em;
+    }
+  }
 
+  .right-container {
+    //padding-top: 10em;
+    width: 50vw;
+    margin: auto auto;
+    button {
+      font-size: 2em;
+      border-radius: 10px;
+      box-shadow: 11px 10px 28px -4px rgba(0,0,0,0.50);
+      background-color: $primaryColor2;
+      color: $primaryColor1;
+      margin: 3em 10em;
+    }
+    img {
+      margin: 0 auto;
+      max-width: 50%;
+    }
+    display: flex;
+    flex-direction: column;
   }
 }
 
-.right-container {
-  width: 50%
-}
+
 
 
