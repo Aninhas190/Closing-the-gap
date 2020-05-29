@@ -59,6 +59,8 @@ app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
 app.use('/dashboard', dashboardRouter);
 
+
+
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {
   next(createError(404));
