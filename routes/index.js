@@ -7,7 +7,7 @@ const routeGuard = require('./../middleware/route-guard');
 const User = require('./../models/user');
 
 const multer = require('multer');
-const cloudinary = require('cloudinary');
+const cloudinary = require('cloudinary').v2;
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
 cloudinary.config({
@@ -18,12 +18,12 @@ cloudinary.config({
 
 const storage = new CloudinaryStorage({
   cloudinary,
-  folder: 'user-image-hackathon'
+  params: {
+    folder: 'user-image-hackathon'
+  }
 });
 
 const uploader = multer({ storage });
-
-//import User from './../models/user';
 
 router.get('/', (req, res, next) => {
   res.render('index', { title: 'Hello World!' });
@@ -31,26 +31,18 @@ router.get('/', (req, res, next) => {
 
 router.get('/profile', routeGuard, (req, res, next) => {
   res.render('userProfile');
-  console.log(req.user);
 });
 
 router.get('/profile/edit', routeGuard, (req, res) => {
   res.render('edit');
-  console.log(req.user._id);
 });
 
-router.post('/profile/edit', uploader.single('image'), routeGuard, (req, res, next) => {
-
+router.post('/profile/edit', uploader.single('image'), (req, res, next) => {
   const userId = req.user._id;
-  const image = req.file.url;
-  console.log(image);
-
-  console.log(userId, image);
-
+  const image = req.file.path;
   User.findByIdAndUpdate(userId, { image })
     .then((user) => {
-      console.log(user);
-      res.redirect('/');
+      res.redirect('/profile');
     })
     .catch((error) => next(error));
 });
