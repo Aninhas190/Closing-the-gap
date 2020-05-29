@@ -10,6 +10,8 @@
   <body>
     <nav>
       <a href="/">Home</a>
+      <a href="/authentication/sign-in">Sign In</a>
+      <a href="/authentication/sign-up">Sign Up</a>
       {{#if user}}
         <!-- <a href="/">{{user.name}}'s Profile</a> -->
         <form action="/authentication/sign-out" method="POST">
@@ -19,8 +21,6 @@
       {{/if}}
     </nav>
     {{{body}}}
-    <a href="/authentication/sign-in">Sign In</a>
-    <a href="/authentication/sign-up">Sign Up</a>
     <script src="/scripts/script.js"></script>
   </body>
 </html>
