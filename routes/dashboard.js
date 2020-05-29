@@ -34,7 +34,7 @@ dashboard.post('/:userid/post/create', routeGuard, (req, res, next) => {
     creator: userid
   })
     .then((document) => {
-      res.redirect('/');
+      res.redirect('/dashboard');
     })
     .catch((error) => {
       next(error);
