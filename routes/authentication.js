@@ -25,7 +25,7 @@ router.post('/sign-up', (req, res, next) => {
     })
     .then((user) => {
       req.session.user = user._id;
-      res.redirect('/dashboard');
+      res.redirect('/authentication/sign-in');
     })
     .catch((error) => {
       next(error);
