@@ -1,17 +1,23 @@
 
-<section  class="profile">
+<section  class="dashboard">
 
-<h1>Welcome, {{user.name}}!</h1>
+<h1>Welcome {{user.name}}, how are you today?</h1>
 
 <a href="/dashboard/{{ user._id }}/post/create">Create Post</a>
-
+<br />
 
 {{#each posts}}
-<h4>{{creator.name}} - {{title}}</h4>
-<a href="/profile">Contact me here</a>
+<div class="post">
+<div>
+  <h4>{{creator.name}} - {{title}}</h4>
+  <a href="/profile">Contact me here</a>
+</div>
+<br/>
 <h5>Message</h5>
 <p>{{message}}</p>
+<br />
 <small>{{createdDate}}</small>
 <hr>
-</section>
+</div>
 {{/each}}
+</section>
