@@ -25,11 +25,11 @@ const storage = new CloudinaryStorage({
 
 const uploader = multer({ storage });
 
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   res.render('index', { title: 'Hello World!' });
 });
 
-router.get('/profile', routeGuard, (req, res, next) => {
+router.get('/profile', routeGuard, (req, res) => {
   res.render('userProfile');
 });
 

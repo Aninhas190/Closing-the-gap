@@ -7,7 +7,7 @@ const User = require('./../models/user');
 
 const router = new Router();
 
-router.get('/sign-up', (req, res, next) => {
+router.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
@@ -32,7 +32,7 @@ router.post('/sign-up', (req, res, next) => {
     });
 });
 
-router.get('/sign-in', (req, res, next) => {
+router.get('/sign-in', (req, res) => {
   res.render('sign-in');
 });
 
@@ -61,7 +61,7 @@ router.post('/sign-in', (req, res, next) => {
     });
 });
 
-router.post('/sign-out', (req, res, next) => {
+router.post('/sign-out', (req, res) => {
   req.session.destroy();
   res.redirect('/');
 });
