@@ -7,11 +7,27 @@ const User = require('./../models/user');
 
 const router = new Router();
 
+//picture
+const multer = require('multer');
+const cloudinary = require('cloudinary');
+const multerStorageCloudinary = require('multer-storage-cloudinary');
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET
+});
+
+const storage = multerStorageCloudinary({
+  cloudinary,
+  folder: 'user-image-hackathon'
+});
+
 router.get('/sign-up', (req, res, next) => {
   res.render('sign-up');
 });
 
-router.post('/sign-up', (req, res, next) => {
+router.post('/sign-up', uploader.single('image') (req, res, next) => {
   const { name, email, password, image, phoneNumber } = req.body;
   bcryptjs
     .hash(password, 10)
