@@ -1,11 +1,13 @@
 <h1>Welcome, {{user.name}}!</h1>
 
 <a href="/dashboard/{{ user._id }}/post/create">Create Post</a>
-<hr>
+
 
 {{#each posts}}
 <section>
 <h4>{{creator.name}} - {{title}}</h4>
+<a href="/profile">Contact me here</a>
+<h5>Message</h5>
 <p>{{message}}</p>
 <small>{{createdDate}}</small>
 <hr>
