@@ -10,7 +10,7 @@ const router = new Router();
 //picture
 const multer = require('multer');
 const cloudinary = require('cloudinary');
-const multerStorageCloudinary = require('multer-storage-cloudinary');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -18,10 +18,12 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-const storage = multerStorageCloudinary({
+const storage = new CloudinaryStorage({
   cloudinary,
   folder: 'user-image-hackathon'
 });
+
+const uploader = multer({ storage });
 
 router.get('/sign-up', (req, res, next) => {
   res.render('sign-up');
