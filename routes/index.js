@@ -13,5 +13,3 @@ router.get('/', (req, res, next) => {
 router.get('/profile', routeGuard, (req, res, next) => {
   res.render('userProfile', req.user);
 });
-
-module.exports = router;
